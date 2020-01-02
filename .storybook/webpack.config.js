@@ -1,4 +1,5 @@
-module.exports = function({ config }) {
+const path = require("path");
+module.exports = function({ config, baseConfig, env }) {
     config.module.rules.push({
         test: /\.stories\.jsx?$/,
         loaders: [require.resolve('@storybook/addon-storysource/loader')],
@@ -17,5 +18,9 @@ module.exports = function({ config }) {
             'sass-loader'
         ]
     });
+    config.resolve.alias = {
+        ...config.resolve.alias,
+        "@": path.resolve(__dirname, "../src"),
+      };
     return config;
 };
