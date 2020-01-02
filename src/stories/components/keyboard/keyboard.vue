@@ -1,6 +1,6 @@
 <template>
 <div class="wpt-keyboard">
-  <component :is="genre" @type="trigger" :numberArray="numberArray"></component>
+  <component :is="genre" @keyin="keyin" :numberArray="numberArray"></component>
 </div>
 </template>
 
@@ -25,10 +25,11 @@ export default {
     },
   },
   methods: {
-    trigger(key) {
+    keyin(key) {
       /**
        * 點擊鍵盤事件
        * @type {Event}
+       * @event 'keyin'
        */
       this.$emit('keyin', key);
     },

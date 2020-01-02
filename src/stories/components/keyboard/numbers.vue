@@ -1,5 +1,5 @@
 <template>
-<div class="wpt-keyboard-numers" @click="type($event)">
+<div class="wpt-keyboard-numers" @click="keyin($event)">
   <button v-for="(item) in numberArray" :key="item.key" type="button" :data-key="item.key">
     <span>{{ item.text }}</span>
   </button>
@@ -52,10 +52,14 @@ export default {
     },
   },
   methods: {
-    type(event) {
+    keyin(event) {
+      /**
+       * 點擊鍵盤事件
+       * @type {Event}
+       */
       const target = event.target;
       if (target !== this.$el && target.dataset.key) {
-        this.$emit('type', target.dataset.key);
+        this.$emit('keyin', target.dataset.key);
       }
     },
   },
