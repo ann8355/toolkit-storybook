@@ -1,0 +1,10 @@
+{
+    "name": "@toolkit/keyboard",
+    "version": "1.0.0",
+    "description": "Common keyboard",
+    "author": "Anne",
+    "private": true,
+    "scripts": {
+        "build-b": "vue-cli-service build --target lib --name keyboard ./keyboard.vue"
+    }
+}

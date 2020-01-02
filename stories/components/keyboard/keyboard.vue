@@ -1,0 +1,43 @@
+<template>
+<div class="wpt-keyboard">
+  <component :is="genre" @type="trigger" :numberArray="numberArray"></component>
+</div>
+</template>
+
+<script>
+import Numbers from './numbers';
+
+export default {
+  name: 'Keyboard',
+  props: {
+    /**
+      * 切換成某元件, default: Numbers
+    */
+    genre: {
+      type: String,
+      default: 'Numbers',
+    },
+    /**
+      * 鍵盤按鈕上的數字
+    */
+    numberArray: {
+      type: Array,
+    },
+  },
+  methods: {
+    trigger(key) {
+      /**
+       * 點擊鍵盤事件
+       * @type {Event}
+       */
+      this.$emit('keyin', key);
+    },
+  },
+  components: {
+    Numbers,
+  },
+};
+</script>
+
+<style>
+</style>
