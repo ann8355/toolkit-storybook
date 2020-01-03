@@ -1,0 +1,10 @@
+{
+    "name": "@toolkit/badge",
+    "version": "1.0.0",
+    "description": "Common badge",
+    "author": "Anne",
+    "private": true,
+    "scripts": {
+        "build-b": "vue-cli-service build --target lib --name badge ./badge.vue"
+    }
+}
