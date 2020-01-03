@@ -1,0 +1,10 @@
+{
+    "name": "@toolkit/clock",
+    "version": "1.0.0",
+    "description": "Common clock",
+    "author": "Anne",
+    "private": true,
+    "scripts": {
+        "build-b": "vue-cli-service build --target lib --name clock ./clock.vue"
+    }
+}
