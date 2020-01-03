@@ -1,0 +1,10 @@
+{
+    "name": "@toolkit/quantity",
+    "version": "1.0.0",
+    "description": "Common quantity",
+    "author": "Anne",
+    "private": true,
+    "scripts": {
+        "build-b": "vue-cli-service build --target lib --name quantity ./quantity.vue"
+    }
+}

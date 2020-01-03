@@ -60,45 +60,29 @@ export const Keyboard = () => ({
       default: array('numberArray', defaultNums)
     },
   },
-  data () {
-    return {
-      defaultNums: [{
-        text: '1',
-        key: '1',
-      }, {
-        text: '2',
-        key: '2',
-      }, {
-        text: '3',
-        key: '3',
-      }, {
-        text: '4',
-        key: '4',
-      }, {
-        text: '5',
-        key: '5',
-      }, {
-        text: '6',
-        key: '6',
-      }, {
-        text: '7',
-        key: '7',
-      }, {
-        text: '8',
-        key: '8',
-      }, {
-        text: '9',
-        key: '9',
-      }, {
-        text: 'C',
-        key: 'clear',
-      }, {
-        text: '0',
-        key: '0',
-      }],
+  methods: {
+    keyin(val) {
+      /**
+        * 點擊鍵盤事件
+        * @type {Event}
+        * @event 'keyin'
+      */
+      const root = document.getElementById("textArea");
+      const textnode = document.createTextNode(val);
+      if (val === 'clear') {
+        root.innerHTML = '';
+      } else if(val === 'backspace') {
+        root.removeChild(root.lastChild);
+      } else {
+        root.appendChild(textnode);
+      }
     }
-},
-  template: '<keyboard :numberArray="defaultNums" />',
+  },
+  template: `
+  <div>
+    <div id="textArea"></div>
+    <keyboard id="keyboard" :numberArray="numberArray" @keyin="keyin" />
+  </div>`
 });
 
 
