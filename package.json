@@ -2,11 +2,13 @@
   "name": "toolkit-storybook",
   "version": "0.0.1",
   "private": true,
+  "main": "dist/toolkit-storybook.common.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules",
     "build-storybook": "build-storybook -s public",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
-    "storybook": "start-storybook -p 9009 -s public"
+    "storybook": "start-storybook -p 9009 -s public",
+    "build-bundle": "vue-cli-service build --target lib --name toolkit-storybook ./src/index.js"
   },
   "dependencies": {
     "moment": "^2.20.1",
