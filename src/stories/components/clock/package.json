@@ -4,6 +4,7 @@
     "description": "Common clock",
     "author": "Anne",
     "private": true,
+    "main": "dist/clock.common.js",
     "scripts": {
         "build-b": "vue-cli-service build --target lib --name clock ./clock.vue"
     }
