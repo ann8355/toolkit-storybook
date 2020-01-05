@@ -1,0 +1,19 @@
+<meta charset="utf-8">
+<title>keyboard demo</title>
+<script src="https://unpkg.com/vue"></script>
+<script src="./keyboard.umd.js"></script>
+
+<link rel="stylesheet" href="./keyboard.css">
+
+
+<div id="app">
+  <demo></demo>
+</div>
+
+<script>
+new Vue({
+  components: {
+    demo: keyboard
+  }
+}).$mount('#app')
+</script>
